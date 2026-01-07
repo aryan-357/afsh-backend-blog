@@ -5,6 +5,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const path_1 = __importDefault(require("path"));
 exports.default = ({ env }) => {
+    if (env('NODE_ENV') === 'production') {
+        if (env('DATABASE_CLIENT') !== 'postgres') {
+            throw new Error('Refusing to run in production with DATABASE_CLIENT not set to "postgres". ' +
+                'You are currently using "sqlite" (or undefined) which implies ephemeral storage. ' +
+                'This leads to data loss on every deployment. ' +
+                'Please set DATABASE_CLIENT=postgres and configure DATABASE_HOST, DATABASE_PORT, etc.');
+        }
+    }
     const client = env('DATABASE_CLIENT', 'sqlite');
     const connections = {
         mysql: {
