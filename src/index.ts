@@ -51,9 +51,11 @@ export default {
 
       // 2. Create Sample Notice (using documents API for content types in v5)
       // Check if any notices exist
-      const count = await strapi.documents('api::notice.notice').count();
+      // @ts-ignore - Types are not generated yet for this new content type
+      const count = await strapi.documents('api::notice.notice').count({});
 
       if (count === 0) {
+        // @ts-ignore - Types are not generated yet
         await strapi.documents('api::notice.notice').create({
           data: {
             title: 'Welcome Notice',
