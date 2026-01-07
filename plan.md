@@ -22,10 +22,10 @@
     - [x] Configured Cloudinary environment variables
     - [x] Fixed package-lock.json sync issue
     - [x] **Live URL**: https://afsh-backend-blog-production.up.railway.app/
-- [ ] **Post-Deployment Configuration** (Manual steps required)
-    - [ ] Access admin panel and create admin user
-    - [ ] **Permissions**: Settings > Users & Permissions Plugin > Roles > Public. Check `find` and `findOne` for `Post`
-    - [ ] Create test post to verify API
+- [x] **Post-Deployment Configuration**
+    - [x] Access admin panel and create admin user
+    - [x] Permissions: Settings > Users & Permissions Plugin > Roles > Public. Checked `find` and `findOne` for `Post`
+    - [x] Create test post to verify API
 
 ## Phase 2: Frontend Setup (React/Vite/TS) - **[DONE]**
 - [x] **Initialize Project**
