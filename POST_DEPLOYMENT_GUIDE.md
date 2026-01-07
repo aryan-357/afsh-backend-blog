@@ -178,7 +178,30 @@ GET /api/posts?sort=publishedAt:desc&populate=*
 
 ---
 
+---
+
 ## Troubleshooting
+
+### ⚠️ URGENT: Data Resets on Deployment
+**Issue:** "Every time I deploy, my admin panel resets and posts disappear."
+**Cause:** Your Railway variables are configured to use **SQLite** (local file) instead of **PostgreSQL**.
+**Fix:**
+1. Go to Railway > Variables.
+2. **CHANGE** `DATABASE_CLIENT` from `sqlite` to `postgres`.
+3. **ADD** the missing database variables from your Railway PostgreSQL service:
+   - `DATABASE_HOST`
+   - `DATABASE_PORT`
+   - `DATABASE_NAME`
+   - `DATABASE_USERNAME`
+   - `DATABASE_PASSWORD`
+
+### ⚠️ Security Warning: "tobemodified"
+**Issue:** variables like `APP_KEYS`, `API_TOKEN_SALT`, `ADMIN_JWT_SECRET` are set to default values like `tobemodified`.
+**Fix:** You **MUST** generate random secrets for these.
+1. Open your terminal locally.
+2. Run `openssl rand -base64 32` to generate a secure string.
+3. Replace the `tobemodified` values in Railway with these new random strings.
+   - Note: `APP_KEYS` requires **4** comma-separated secrets (e.g. `secret1,secret2,secret3,secret4`).
 
 ### "403 Forbidden" Error
 - ❌ You didn't enable `find` and `findOne` permissions for Public role
