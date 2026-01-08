@@ -43,7 +43,7 @@
             "relation": "manyToMany",
             "target": "api::author.author",
             "inversedBy": "posts",
-            "required": true
+            "required": false
         }
     }
 }

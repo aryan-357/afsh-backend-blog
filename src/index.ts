@@ -29,6 +29,8 @@ export default {
           'api::notice.notice.findOne',
           'api::post.post.find',
           'api::post.post.findOne',
+          'api::author.author.find',
+          'api::author.author.findOne',
         ];
 
         for (const action of permissions) {
