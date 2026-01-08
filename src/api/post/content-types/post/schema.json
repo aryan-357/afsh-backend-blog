@@ -37,6 +37,13 @@
         "description": {
             "type": "text",
             "required": false
+        },
+        "authors": {
+            "type": "relation",
+            "relation": "manyToMany",
+            "target": "api::author.author",
+            "inversedBy": "posts",
+            "required": true
         }
     }
 }
