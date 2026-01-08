@@ -31,6 +31,8 @@ export default {
           'api::post.post.findOne',
           'api::author.author.find',
           'api::author.author.findOne',
+          'api::category.category.find',
+          'api::category.category.findOne',
         ];
 
         for (const action of permissions) {

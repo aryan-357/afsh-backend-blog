@@ -44,6 +44,12 @@
             "target": "api::author.author",
             "inversedBy": "posts",
             "required": false
+        },
+        "category": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "api::category.category",
+            "inversedBy": "posts"
         }
     }
 }
