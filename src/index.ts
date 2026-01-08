@@ -27,6 +27,8 @@ export default {
         const permissions = [
           'api::notice.notice.find',
           'api::notice.notice.findOne',
+          'api::post.post.find',
+          'api::post.post.findOne',
         ];
 
         for (const action of permissions) {
