@@ -15,7 +15,14 @@ export default [
       },
     },
   },
-  'strapi::cors',
+  {
+    name: 'strapi::cors',
+    config: {
+      origin: ['https://afsh-web.pages.dev', 'http://localhost:5173', 'http://localhost:1337'],
+      headers: ['*'],
+      methods: ['*'],
+    },
+  },
   'strapi::poweredBy',
   'strapi::query',
   'strapi::body',
